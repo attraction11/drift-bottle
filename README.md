@@ -10,17 +10,22 @@ NodeJS漂流瓶应用，本项目基于 Express  Redis  MongoDB
 
 1、首先，需要运行 _Redis_ 服务：
 
-	$ redis-server
+	$ redis-server                                            // 本地
+
+  cd /root/redis-6.0.9/src
+  $ redis-serve /etc/redis/6379.conf                        // 远程
 	
 2、然后，启动 _MongoDB_ 数据库：
 
   $ mongod --dbpath="D:\soft\mongodb-5.0.5\data"            // 本地
 	
-	$ ./mongod -f /usr/local/mongodb410/bin/mongodb.conf      // 远程
+  cd /usr/local/mongodb410/bin
+	$ ./mongod -f ./mongodb.conf                              // 远程
 	
+  ps -ef|grep mongodb                                       // 检查进程
 3、最后，运行 _Express_ 应用:
 
-    ./bin/www
+    node ./bin/www
 
 ### 网页访问
 1、访问地址（比较慢）：``` http://106.75.75.186:3000/ ```
